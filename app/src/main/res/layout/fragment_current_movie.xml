@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_text">
+
+        <TextView
+            android:id="@+id/current_movie_titleMovie"
+            style="@style/Theme.Imdbcollector.TitleMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/sample_text" />
+
+        <TextView
+            android:id="@+id/current_movie_sinopsisTitle"
+            style="@style/Theme.Imdbcollector.SinposisTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_movie_titleMovie" />
+
+        <TextView
+            android:id="@+id/current_movie_sinopsis"
+            style="@style/Theme.Imdbcollector.Sinposis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_movie_sinopsisTitle"
+            tools:text="@string/sample_long_text" />
+
+        <ImageView
+            android:id="@+id/current_movie_poster"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="@dimen/constraint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/current_movie_year"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/current_movie_sinopsis"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/current_movie_year"
+            style="@style/Theme.Imdbcollector.CurrentMovieText"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_text"
+            app:layout_constraintBottom_toTopOf="@+id/current_movie_rating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/current_movie_poster"
+            app:layout_constraintTop_toBottomOf="@id/current_movie_sinopsis"
+            tools:text="@string/sample_text" />
+
+        <TextView
+            android:id="@+id/current_movie_rating"
+            style="@style/Theme.Imdbcollector.CurrentMovieText"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/padding_text"
+            app:layout_constraintBottom_toTopOf="@+id/current_movie_crew"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/current_movie_poster"
+            app:layout_constraintTop_toBottomOf="@id/current_movie_year"
+            tools:text="@string/sample_text" />
+
+        <TextView
+            android:id="@+id/current_movie_crew"
+            style="@style/Theme.Imdbcollector.CurrentMovieText"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/current_movie_poster"
+            app:layout_constraintTop_toBottomOf="@id/current_movie_rating"
+            tools:text="@string/sample_medium_text" />
+
+        <VideoView
+            android:id="@+id/current_movie_trailer"
+            android:layout_width="@dimen/constraint"
+            android:layout_height="400dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_movie_poster" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

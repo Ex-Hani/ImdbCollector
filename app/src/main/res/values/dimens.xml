@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Padding-->
+    <dimen name="btn_padding_main">10dp</dimen>
+    <dimen name="poster_padding">20dp</dimen>
+    <dimen name="padding_text">10dp</dimen>
+
+    <!--    Height/Weight-->
+    <dimen name="width_icon_button">80dp</dimen>
+    <dimen name="height_icon_button">80dp</dimen>
+    <dimen name="height_hint_search">50dp</dimen>
+    <dimen name="constraint">0dp</dimen>
+
+    <!--    Text-->
+    <dimen name="textSize_title_main">18sp</dimen>
+    <dimen name="rating_textSize">30sp</dimen>
+    <dimen name="fulltitle_title">40sp</dimen>
+</resources>
