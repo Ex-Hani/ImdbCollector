@@ -6,5 +6,4 @@ import moxy.MvpAppCompatFragment
 
 @AndroidEntryPoint
 class BaseFragment: MvpAppCompatFragment(), BaseView {
-    val myTag: String = "HaniTag"
 }

@@ -13,7 +13,6 @@ import javax.inject.Inject
 @InjectViewState
 class CurrentMoviePresenter @Inject constructor(
     private val movieRepository: MovieRepository,
-    private val myTag: BasePresenter
 ) : MvpPresenter<CurrentMovieView>(), CoroutineScope by CoroutineScope(
     Dispatchers.Main
 ) {
@@ -40,7 +39,7 @@ class CurrentMoviePresenter @Inject constructor(
                 val imdbId = movieRepository.currentMovie.getMovieId()
                 val result = movieRepository.getPilot(imdbId)
                 viewState.setPilot(result)
-                Log.d(myTag.toString(), result.toString())
+                Log.d("HaniTag", result.toString())
             } catch (e: Exception) {
                 viewState.showError()
             }

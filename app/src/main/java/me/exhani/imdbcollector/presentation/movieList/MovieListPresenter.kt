@@ -13,8 +13,7 @@ import javax.inject.Inject
 
 @InjectViewState
 class MovieListPresenter @Inject constructor(
-    private val movieRepository: MovieRepository,
-    private val myTag: BasePresenter
+    private val movieRepository: MovieRepository
 ) : MvpPresenter<MovieListView>(), CoroutineScope by CoroutineScope(
     Dispatchers.Main
 ) {
@@ -37,10 +36,10 @@ class MovieListPresenter @Inject constructor(
                     viewState.setList(result.results)
                 else {
                     viewState.showError(result.errorMessage)
-                    Log.e(myTag.toString(), result.toString())
+                    Log.e("HaniTag", result.toString())
                 }
             } catch (e: Exception) {
-                Log.e(myTag.toString(), e.toString())
+                Log.e("HaniTag", e.toString())
                 viewState.showError()
             }
         }
