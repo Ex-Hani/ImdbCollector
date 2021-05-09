@@ -49,10 +49,10 @@ class MovieAdapter(
 
     override fun onBindViewHolder(holder: MovieHolder, position: Int) {
         (holder).binding.movitItemTitle.text = items.get(position).getTitile()
-//        (holder).binding.ratingMovieText.text = items?.get(position)?.imDbRating.toString()
-//        if (binding.ratingMovieText.text == "") {
-//            binding.ratingMovieText.text = "?"
-//        }
+        (holder).binding.ratingMovieText.text = items?.get(position)?.getRating()
+        if (binding.ratingMovieText.text == "") {
+            binding.ratingMovieText.text = "?"
+        }
 
         Glide.with(context)
             .load(items.get(position).getPoster())
