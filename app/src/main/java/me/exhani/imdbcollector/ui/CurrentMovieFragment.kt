@@ -1,15 +1,16 @@
 package me.exhani.imdbcollector.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 import me.exhani.imdbcollector.R
 import me.exhani.imdbcollector.databinding.FragmentCurrentMovieBinding
+import me.exhani.imdbcollector.entities.ImdbMostPopularMoviesItem
 import me.exhani.imdbcollector.entities.ImdbWikiPediaInfo
 import me.exhani.imdbcollector.entities.Movie
 import me.exhani.imdbcollector.presentation.currentMovie.CurrentMoviePresenter
@@ -43,11 +44,8 @@ class CurrentMovieFragment : MvpAppCompatFragment(), CurrentMovieView {
 
     override fun showCurrentMovieData(result: Movie) {
         binding.apply {
-            Glide.with(this@CurrentMovieFragment)
-                .load(result.getPoster())
-                .into(currentMoviePoster)
             currentMovieRating.text = result.getRating()
-            currentMovieSinopsisTitle.text = result.getTitile()
+            currentMovieTitleMovie.text = result.getTitile()
         }
     }
 
@@ -59,7 +57,15 @@ class CurrentMovieFragment : MvpAppCompatFragment(), CurrentMovieView {
 
     override fun setPilot(result: ImdbWikiPediaInfo) {
         binding.apply {
-            currentMovieSinopsis.text = result.plotShort.toString()
+            currentMovieSinopsis.text = result.plotShort.plainText
         }
     }
+
+    override fun setYear(result: Movie) {
+        binding.apply {
+            currentMovieYear.text = result.getYear()
+            Log.d("HaniTag", result.getYear())
+        }
+    }
+
 }

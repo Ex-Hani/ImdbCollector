@@ -1,5 +1,6 @@
 package me.exhani.imdbcollector.presentation.currentMovie
 
+import me.exhani.imdbcollector.entities.ImdbMostPopularMoviesItem
 import me.exhani.imdbcollector.entities.ImdbWikiPediaInfo
 import me.exhani.imdbcollector.entities.Movie
 import moxy.MvpView
@@ -16,4 +17,7 @@ interface CurrentMovieView : MvpView {
 
     @AddToEndSingle
     fun setPilot(result: ImdbWikiPediaInfo)
+
+    @AddToEndSingle
+    fun setYear(result: Movie)
 }

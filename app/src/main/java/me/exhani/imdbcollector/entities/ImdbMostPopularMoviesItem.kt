@@ -15,7 +15,7 @@ data class ImdbMostPopularMoviesItem(
     @SerializedName("fullTitle")
     val fullTitle: String, // Zack Snyder's Justice League (2021)
     @SerializedName("year")
-    val year: String, // 2021
+    private val year: String, // 2021
     @SerializedName("image")
     val image: String, // https://m.media-amazon.com/images/M/MV5BYjI3NDg0ZTEtMDEwYS00YWMyLThjYjktMTNlM2NmYjc1OGRiXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_UX128_CR0,3,128,176_AL_.jpg
     @SerializedName("crew")
@@ -41,5 +41,10 @@ data class ImdbMostPopularMoviesItem(
     override fun getMovieId(): String {
         return imdbId
     }
+
+    override fun getYear(): String {
+        return year
+    }
+
 
 }

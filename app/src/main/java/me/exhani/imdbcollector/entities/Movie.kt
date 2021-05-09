@@ -5,4 +5,5 @@ interface Movie {
     fun getPoster(): String
     fun getRating(): String
     fun getMovieId(): String
+    fun getYear(): String
 }

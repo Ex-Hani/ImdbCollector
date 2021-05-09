@@ -31,4 +31,8 @@ data class ImdbSearchingMovieResult(
     override fun getMovieId(): String {
         return id
     }
+
+    override fun getYear(): String {
+        return ""
+    }
 }
