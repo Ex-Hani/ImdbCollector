@@ -1,8 +1,10 @@
 package me.exhani.imdbcollector.entities
 
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class ImdbSearchingMovieResult(
     @SerializedName("id")
     val id: String, // tt1754539

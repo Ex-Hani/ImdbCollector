@@ -1,8 +1,10 @@
 package me.exhani.imdbcollector.entities
 
 
+import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 
+@Entity
 data class ImdbMostPopularMoviesItem(
     @SerializedName("id")
     val imdbId: String, // tt12361974
